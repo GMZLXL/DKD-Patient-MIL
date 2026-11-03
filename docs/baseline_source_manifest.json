@@ -1,0 +1,56 @@
+[
+  {
+    "source": "experiments/aggregation_comparison/src/aggregators.py",
+    "sha256": "f8428ee954643398942a99ffd8b3908034ca0bbf43b2eebd34f7a8e78391d59a",
+    "export_sha256": "f8428ee954643398942a99ffd8b3908034ca0bbf43b2eebd34f7a8e78391d59a",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  },
+  {
+    "source": "experiments/aggregation_comparison/src/patient_bags.py",
+    "sha256": "da9bb83ec1e8907f220428a0dfa4854ebad471cde599f9e1b3bd66e547ff0dc6",
+    "export_sha256": "da9bb83ec1e8907f220428a0dfa4854ebad471cde599f9e1b3bd66e547ff0dc6",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  },
+  {
+    "source": "experiments/aggregation_comparison/src/metrics.py",
+    "sha256": "776af0e812361cebbf6c6a69d16c5112a8272bbfbd2d5cb53c1cfc00be5cc71d",
+    "export_sha256": "776af0e812361cebbf6c6a69d16c5112a8272bbfbd2d5cb53c1cfc00be5cc71d",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  },
+  {
+    "source": "experiments/aggregation_comparison/scripts/train_cv.py",
+    "sha256": "42b0a05cc677f066fa42aee2b76e46c63c71ecd318a8872c12572ee938312878",
+    "export_sha256": "42b0a05cc677f066fa42aee2b76e46c63c71ecd318a8872c12572ee938312878",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  },
+  {
+    "source": "experiments/aggregation_comparison/scripts/aggregate_results.py",
+    "sha256": "61d9ebf78b0d45e470a8dc9e3d6444f6264c5a06c5b0115e9875950a5c45faa3",
+    "export_sha256": "61d9ebf78b0d45e470a8dc9e3d6444f6264c5a06c5b0115e9875950a5c45faa3",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  },
+  {
+    "source": "experiments/aggregation_comparison/scripts/audit_dataset.py",
+    "sha256": "123ed6bd94b24271111455bf4a6d263f31ec32ac6ec8e2e99de4e4ee1579e542",
+    "export_sha256": "123ed6bd94b24271111455bf4a6d263f31ec32ac6ec8e2e99de4e4ee1579e542",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  },
+  {
+    "source": "experiments/aggregation_comparison/scripts/extract_features.py",
+    "sha256": "a38890b8496418a9186d4c7ab104d10776c7b35cf1df59c9bbf5744518a662f0",
+    "export_sha256": "a38890b8496418a9186d4c7ab104d10776c7b35cf1df59c9bbf5744518a662f0",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  },
+  {
+    "source": "experiments/aggregation_comparison/scripts/smoke_test.py",
+    "sha256": "746107606de0d4df8a78d14b73b84c4967fe0d3aa977b2364393ea8b9090f123",
+    "export_sha256": "746107606de0d4df8a78d14b73b84c4967fe0d3aa977b2364393ea8b9090f123",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  },
+  {
+    "source": "experiments/aggregation_comparison/tests/test_protocol.py",
+    "sha256": "c4bff10372aed7c4a5e66897126bd3d203ebfa03f32988616991812b25f10d69",
+    "export_sha256": "c4bff10372aed7c4a5e66897126bd3d203ebfa03f32988616991812b25f10d69",
+    "note": "Exact code used in completed baseline experiments; not rerun."
+  }
+]

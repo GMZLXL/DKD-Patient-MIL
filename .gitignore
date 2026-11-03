@@ -9,6 +9,7 @@
 !/tools/
 !/tests/
 !/docs/
+!/experiments/
 
 # Private research inputs, derived data, artifacts, and checkpoints, anywhere.
 **/data/

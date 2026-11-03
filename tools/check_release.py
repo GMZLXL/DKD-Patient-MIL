@@ -29,7 +29,7 @@ def main():
     errors=[];count=0;parsed=0
     for rel,raw in files(a.staged):
         name=rel.as_posix();count+=1
-        allowed=name in ROOT_FILES or (rel.parts[0] in ALLOWED and rel.suffix in ALLOWED[rel.parts[0]]) or name=='docs/source_manifest.json'
+        allowed=name in ROOT_FILES or (rel.parts[0] in ALLOWED and rel.suffix in ALLOWED[rel.parts[0]]) or name in {'docs/source_manifest.json','docs/baseline_source_manifest.json','docs/phpr_configuration_audit.json','docs/upstream_source_manifest.json'} or (name.startswith('experiments/aggregation_comparison/') and rel.suffix=='.py')
         if not allowed:errors.append(name+': file is outside source-only whitelist')
         if b'\0' in raw:errors.append(name+': binary content');continue
         try:text=raw.decode('utf-8-sig')

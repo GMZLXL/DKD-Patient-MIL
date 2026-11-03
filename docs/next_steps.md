@@ -1,10 +1,9 @@
-# 下一阶段（等待代码审查后另行执行）
+# 本轮完成后等待代码审查
 
-1. 审查保留的历史入口、PHPR 与独立 EMA-PCAR 的边界、历史留出折选模问题。
-2. 明确统一 B0 的可验证 ImageNet 权重、确定性预处理与缓存协议，审查前序工作是否可沿用。
-3. 固定患者级外层五折、训练部分的分层内层验证、早停和阈值规则；验证无泄漏。
-4. 审查 Gated-ABMIL 公式与原作者实现；获得并固定 DGR-MIL、ACMIL 官方版本与许可证，保留核心模块、损失及小 bag 掩蔽策略。
-5. 对 Mean / Gated-ABMIL / PHPR / DGR-MIL / ACMIL 做 K=1..9 验收，审定后才考虑真实实验。
-6. 若需运行五折，另行授权进入该阶段；本次发布完成即停止。
+1. 核对三基线实际代码摘要和 PHPR 五折 p1/lambda_std=0 配置审计。
+2. 审查 DGR 短 bag 精确 attention、实例值残差替换、长序列 mask/landmark；审查 ACMIL-GA 掩蔽与专用目标。
+3. 审查 DGR warmup 限制：固定验证规则允许选择辅助损失启用前的 checkpoint。不能据测试结果改规则重跑，不能称其证明完整辅助目标有效；是否另立预先固定的 checkpoint eligibility 协议留待审查。
+4. 核查 shared split、内层阈值、单次 outer test、合成回归及真实单折 smoke。所有真实产物保留在本地。
+5. 本轮发布后停止；不自动进入新探索、AttriMIL/TDA、临床多模态、病理或 RETFound 重训。
 
-待补材料：本地 DGR-MIL 与 ACMIL 压缩包/解压目录；如要审查 AttriMIL，也提供原包。未来运行 RETFound 需使用者自备受信任源码、对应依赖和权重。本阶段不需要提供患者表、图像、真实特征或模型权重。
+DGR/ACMIL 已取得官方固定 commit 源码参考，不再把 ZIP 缺失作为阻塞。代码审查不需要用户上传患者数据或权重。AttriMIL 空间约束及 TDA 可用性仍属后续独立问题。

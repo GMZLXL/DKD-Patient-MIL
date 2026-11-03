@@ -1,0 +1,67 @@
+{
+  "folds": [
+    {
+      "fold": 0,
+      "configuration_matches": true,
+      "checkpoint_prototype_shape": [
+        2,
+        256
+      ],
+      "lambda_proto": 0.1,
+      "lambda_std": 0.0,
+      "num_prototypes_per_class": 1,
+      "temperature": 0.2
+    },
+    {
+      "fold": 1,
+      "configuration_matches": true,
+      "checkpoint_prototype_shape": [
+        2,
+        256
+      ],
+      "lambda_proto": 0.1,
+      "lambda_std": 0.0,
+      "num_prototypes_per_class": 1,
+      "temperature": 0.2
+    },
+    {
+      "fold": 2,
+      "configuration_matches": true,
+      "checkpoint_prototype_shape": [
+        2,
+        256
+      ],
+      "lambda_proto": 0.1,
+      "lambda_std": 0.0,
+      "num_prototypes_per_class": 1,
+      "temperature": 0.2
+    },
+    {
+      "fold": 3,
+      "configuration_matches": true,
+      "checkpoint_prototype_shape": [
+        2,
+        256
+      ],
+      "lambda_proto": 0.1,
+      "lambda_std": 0.0,
+      "num_prototypes_per_class": 1,
+      "temperature": 0.2
+    },
+    {
+      "fold": 4,
+      "configuration_matches": true,
+      "checkpoint_prototype_shape": [
+        2,
+        256
+      ],
+      "lambda_proto": 0.1,
+      "lambda_std": 0.0,
+      "num_prototypes_per_class": 1,
+      "temperature": 0.2
+    }
+  ],
+  "original_class_sha256": "282aa99368a76ab9e05473fada86417b2aa8275f0e1935b343a769b43a9c492b",
+  "aggregation_source_sha256": "f8428ee954643398942a99ffd8b3908034ca0bbf43b2eebd34f7a8e78391d59a",
+  "no_baseline_retraining": true
+}

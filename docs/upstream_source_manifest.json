@@ -1,0 +1,110 @@
+[
+  {
+    "method": "dgr",
+    "repository": "https://github.com/ChongQingNoSubway/DGR-MIL",
+    "commit": "ac6257ffa768f154c52ac8b01e2086e5d3a714bf",
+    "file": "infoNCE.py",
+    "reference_sha256": "63403d7ea99ddbda9812cec482acd531033f50f8a8efc0c33ef2adb76616b297",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/ChongQingNoSubway/DGR-MIL/blob/ac6257ffa768f154c52ac8b01e2086e5d3a714bf/infoNCE.py"
+  },
+  {
+    "method": "dgr",
+    "repository": "https://github.com/ChongQingNoSubway/DGR-MIL",
+    "commit": "ac6257ffa768f154c52ac8b01e2086e5d3a714bf",
+    "file": "LICENSE",
+    "reference_sha256": "dd5253be31f5017b46d98a9b408254a9028fc3e737f239a87d292f9858881ca7",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/ChongQingNoSubway/DGR-MIL/blob/ac6257ffa768f154c52ac8b01e2086e5d3a714bf/LICENSE"
+  },
+  {
+    "method": "dgr",
+    "repository": "https://github.com/ChongQingNoSubway/DGR-MIL",
+    "commit": "ac6257ffa768f154c52ac8b01e2086e5d3a714bf",
+    "file": "loss.py",
+    "reference_sha256": "335aaab17bb8fa8e4acf65cc63f23ca05a5b68df71f3ce3bb254af69e80bba32",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/ChongQingNoSubway/DGR-MIL/blob/ac6257ffa768f154c52ac8b01e2086e5d3a714bf/loss.py"
+  },
+  {
+    "method": "dgr",
+    "repository": "https://github.com/ChongQingNoSubway/DGR-MIL",
+    "commit": "ac6257ffa768f154c52ac8b01e2086e5d3a714bf",
+    "file": "models/dgrmil.py",
+    "reference_sha256": "9b80ba3c5145671fd65b6dfebe52453b7bb50426bc4f3a31b7ffca6134f5ec21",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/ChongQingNoSubway/DGR-MIL/blob/ac6257ffa768f154c52ac8b01e2086e5d3a714bf/models/dgrmil.py"
+  },
+  {
+    "method": "dgr",
+    "repository": "https://github.com/ChongQingNoSubway/DGR-MIL",
+    "commit": "ac6257ffa768f154c52ac8b01e2086e5d3a714bf",
+    "file": "models/linearatt.py",
+    "reference_sha256": "934def09f357597db44f4873359b454f971df0abf6b0f5eff610da50855e69ba",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/ChongQingNoSubway/DGR-MIL/blob/ac6257ffa768f154c52ac8b01e2086e5d3a714bf/models/linearatt.py"
+  },
+  {
+    "method": "dgr",
+    "repository": "https://github.com/ChongQingNoSubway/DGR-MIL",
+    "commit": "ac6257ffa768f154c52ac8b01e2086e5d3a714bf",
+    "file": "models/multiheadatt.py",
+    "reference_sha256": "20863dd6f139617466bc74f86f7e3c6a117ec37f75915b4dd4ac21683334eef3",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/ChongQingNoSubway/DGR-MIL/blob/ac6257ffa768f154c52ac8b01e2086e5d3a714bf/models/multiheadatt.py"
+  },
+  {
+    "method": "dgr",
+    "repository": "https://github.com/ChongQingNoSubway/DGR-MIL",
+    "commit": "ac6257ffa768f154c52ac8b01e2086e5d3a714bf",
+    "file": "models/nystrom_attention.py",
+    "reference_sha256": "7e207e82908604996670963fceac3e2d5fdfba6ae280782c567caa6d63d3350c",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/ChongQingNoSubway/DGR-MIL/blob/ac6257ffa768f154c52ac8b01e2086e5d3a714bf/models/nystrom_attention.py"
+  },
+  {
+    "method": "dgr",
+    "repository": "https://github.com/ChongQingNoSubway/DGR-MIL",
+    "commit": "ac6257ffa768f154c52ac8b01e2086e5d3a714bf",
+    "file": "train_DGRMIL.py",
+    "reference_sha256": "9648091d46e9e933c5aee47a4c9149a33976a0edee76cea94ca831df72980ac7",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/ChongQingNoSubway/DGR-MIL/blob/ac6257ffa768f154c52ac8b01e2086e5d3a714bf/train_DGRMIL.py"
+  },
+  {
+    "method": "acmil",
+    "repository": "https://github.com/dazhangyu123/ACMIL",
+    "commit": "e53d19c81f3892256d41962ffc4352cc91a4f834",
+    "file": "architecture/network.py",
+    "reference_sha256": "d6d7e42bf8d4f3cc10b84515938e150dfb17ea5dcfef7e717be8744749a5a1ad",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/dazhangyu123/ACMIL/blob/e53d19c81f3892256d41962ffc4352cc91a4f834/architecture/network.py"
+  },
+  {
+    "method": "acmil",
+    "repository": "https://github.com/dazhangyu123/ACMIL",
+    "commit": "e53d19c81f3892256d41962ffc4352cc91a4f834",
+    "file": "architecture/transformer.py",
+    "reference_sha256": "2a351c63ac4bbb695652e74d22dd0a62f591e58dca837baa6195eef0b1ea8e60",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/dazhangyu123/ACMIL/blob/e53d19c81f3892256d41962ffc4352cc91a4f834/architecture/transformer.py"
+  },
+  {
+    "method": "acmil",
+    "repository": "https://github.com/dazhangyu123/ACMIL",
+    "commit": "e53d19c81f3892256d41962ffc4352cc91a4f834",
+    "file": "LICENSE",
+    "reference_sha256": "014e6bcf2e35905c47d8c567cebcb67154a69a4332cfc2b4865fe6a0241621cc",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/dazhangyu123/ACMIL/blob/e53d19c81f3892256d41962ffc4352cc91a4f834/LICENSE"
+  },
+  {
+    "method": "acmil",
+    "repository": "https://github.com/dazhangyu123/ACMIL",
+    "commit": "e53d19c81f3892256d41962ffc4352cc91a4f834",
+    "file": "Step3_WSI_classification_ACMIL.py",
+    "reference_sha256": "19e648df42ae20fb6b6d1231d85743074205d86906fc49a62feffc0050719b7f",
+    "reference_note": "SHA256 of local UTF-8 text reference; upstream files not vendored except license",
+    "url": "https://github.com/dazhangyu123/ACMIL/blob/e53d19c81f3892256d41962ffc4352cc91a4f834/Step3_WSI_classification_ACMIL.py"
+  }
+]

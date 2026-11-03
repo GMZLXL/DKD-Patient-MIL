@@ -24,4 +24,12 @@ check_patient_mil_data_qc.py 保留历史相对路径常量，但这些路径只
 
 ## 保留与未纳入
 
-只选择眼底单模态核心和必要工具，不纳入多模态、临床、病理、旧备份、庞大的其他参数探索脚本和本地聚合实验产物。不移动任何原文件。没有新增聚合方法适配或训练入口。
+只选择眼底单模态核心和必要工具，不纳入多模态、临床、病理、旧备份和真实实验产物。不移动原文件。上述 scripts_qc 为历史入口，历史选模问题没有被静默改写。
+
+## 当前聚合比较代码
+
+experiments/aggregation_comparison/src/aggregators.py 是三基线实际模型；patient_bags.py 和 metrics.py 是实际内层划分、缓存和阈值函数。scripts/train_cv.py 是实际用过的统一入口，原样保留，未重跑。来源摘要见 baseline_source_manifest.json。
+
+src/adapted_models/{dgr_mil,acmil,nystrom}.py 为独立适配；scripts/train_adapted_cv.py 仅训练新方法，受模型测试和单折 smoke gate 约束，复用相同 split/threshold。scripts/verify_adapted_runs.py 只读已保存产物核对全部方法，不重新运行 outer test 模型。
+
+顶层 tests/test_protocol.py 使用合成队列测试实际协议及 trainer 的防泄漏行为；原真实缓存测试逐字节存档在 experiments/aggregation_comparison/tests。上游版本、配置核对及差异见 upstream_source_manifest.json、phpr_configuration_audit.json、method_adaptations.md。

@@ -1,57 +1,83 @@
 [
   {
-    "source": "scripts_qc/train_whole_image_effb0_conv_adapter_phpr.py",
-    "export": "scripts_qc/train_whole_image_effb0_conv_adapter_phpr.py",
-    "original_sha256": "282aa99368a76ab9e05473fada86417b2aa8275f0e1935b343a769b43a9c492b",
-    "export_sha256": "282aa99368a76ab9e05473fada86417b2aa8275f0e1935b343a769b43a9c492b",
-    "changes": [
-      "UTF-8/LF normalization only; no algorithm changes."
-    ]
+    "path": "experiments/aggregation_comparison/scripts/aggregate_results.py",
+    "sha256": "61d9ebf78b0d45e470a8dc9e3d6444f6264c5a06c5b0115e9875950a5c45faa3",
+    "provenance": "byte-identical completed baseline source"
   },
   {
-    "source": "scripts_qc/train_effb0_conv_adapter_phpr_ema_pcar_auc.py",
-    "export": "scripts_qc/train_effb0_conv_adapter_phpr_ema_pcar_auc.py",
-    "original_sha256": "84493765cb7333199a78432d02a8dbc3e7b4b330e08b69817b9654dbfaec7151",
-    "export_sha256": "84493765cb7333199a78432d02a8dbc3e7b4b330e08b69817b9654dbfaec7151",
-    "changes": [
-      "UTF-8/LF normalization only; no algorithm changes."
-    ]
+    "path": "experiments/aggregation_comparison/scripts/audit_dataset.py",
+    "sha256": "123ed6bd94b24271111455bf4a6d263f31ec32ac6ec8e2e99de4e4ee1579e542",
+    "provenance": "byte-identical completed baseline source"
   },
   {
-    "source": "scripts_qc/train_whole_image_effb0_frozen_patient_mean_wbce_backup.py",
-    "export": "scripts_qc/train_whole_image_effb0_frozen_patient_mean_wbce_backup.py",
-    "original_sha256": "80513be5a2ec82c7fe2c128aa10f9fa00fd033041e77ef3dc594205fe7ba3293",
-    "export_sha256": "80513be5a2ec82c7fe2c128aa10f9fa00fd033041e77ef3dc594205fe7ba3293",
-    "changes": [
-      "UTF-8/LF normalization only; no algorithm changes."
-    ]
+    "path": "experiments/aggregation_comparison/scripts/extract_features.py",
+    "sha256": "a38890b8496418a9186d4c7ab104d10776c7b35cf1df59c9bbf5744518a662f0",
+    "provenance": "byte-identical completed baseline source"
   },
   {
-    "source": "scripts_qc/train_retfound_patient_mean_wbce.py",
-    "export": "scripts_qc/train_retfound_patient_mean_wbce.py",
-    "original_sha256": "3b2fd544188dc2a4b5328d3af15561db24dfe2db030413b0f17a090573c2efe8",
-    "export_sha256": "5ea5a865ee717d90b14619e8799f5a443552b71fa1071dc0842f2a60c0145e97",
-    "changes": [
-      "Require --retfound-root and --weight-path instead of personal absolute defaults."
-    ]
+    "path": "experiments/aggregation_comparison/scripts/smoke_test.py",
+    "sha256": "746107606de0d4df8a78d14b73b84c4967fe0d3aa977b2364393ea8b9090f123",
+    "provenance": "byte-identical completed baseline source"
   },
   {
-    "source": "scripts_qc/prepare_whole_image_metadata.py",
-    "export": "scripts_qc/prepare_whole_image_metadata.py",
-    "original_sha256": "95ed37ff2aadf8b6301c1db2d86ef5596d30ecdd34f4e28d7a472a14f97ffb06",
-    "export_sha256": "95ed37ff2aadf8b6301c1db2d86ef5596d30ecdd34f4e28d7a472a14f97ffb06",
-    "changes": [
-      "UTF-8/LF normalization only; no algorithm changes."
-    ]
+    "path": "experiments/aggregation_comparison/scripts/train_adapted_cv.py",
+    "sha256": "62a0511096440815a2ce26aa328cd3350a8642a005d07293b80bba8ead9ef777",
+    "provenance": "current reviewed adaptation/test/tool"
   },
   {
-    "source": "scripts_qc/preprocess_whole_fundus_images.py",
-    "export": "scripts_qc/preprocess_whole_fundus_images.py",
-    "original_sha256": "3fa1db91130769ccb899cec70fd10d360aa92a6a34ba1f9b0f51fb3dff91509b",
-    "export_sha256": "3fa1db91130769ccb899cec70fd10d360aa92a6a34ba1f9b0f51fb3dff91509b",
-    "changes": [
-      "UTF-8/LF normalization only; no algorithm changes."
-    ]
+    "path": "experiments/aggregation_comparison/scripts/train_cv.py",
+    "sha256": "42b0a05cc677f066fa42aee2b76e46c63c71ecd318a8872c12572ee938312878",
+    "provenance": "byte-identical completed baseline source"
+  },
+  {
+    "path": "experiments/aggregation_comparison/scripts/verify_adapted_runs.py",
+    "sha256": "35fdcd958a927185bfab255955bd3bb7625ef04f5cd19fc7f2c8bbc7fcb8ae85",
+    "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "experiments/aggregation_comparison/src/adapted_models/__init__.py",
+    "sha256": "20f8198eb89ec6f9de3a14cfa3771746f26856a7d6f5edf7d2423175cacb25cd",
+    "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "experiments/aggregation_comparison/src/adapted_models/acmil.py",
+    "sha256": "52d4cf380932d397ad7a4dd812fdc28342b36d6b0c2a9978ca6aa049b0e38030",
+    "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "experiments/aggregation_comparison/src/adapted_models/dgr_mil.py",
+    "sha256": "ac60c5f87a1073fc30369060f9a42f7ec8d07bbe67c2f05374650791f8fbf4e6",
+    "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "experiments/aggregation_comparison/src/adapted_models/nystrom.py",
+    "sha256": "1074f55831f4d6c5cddb0b03e7122ad9f93610674554e3ef8ad33df929ce2598",
+    "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "experiments/aggregation_comparison/src/aggregators.py",
+    "sha256": "f8428ee954643398942a99ffd8b3908034ca0bbf43b2eebd34f7a8e78391d59a",
+    "provenance": "byte-identical completed baseline source"
+  },
+  {
+    "path": "experiments/aggregation_comparison/src/metrics.py",
+    "sha256": "776af0e812361cebbf6c6a69d16c5112a8272bbfbd2d5cb53c1cfc00be5cc71d",
+    "provenance": "byte-identical completed baseline source"
+  },
+  {
+    "path": "experiments/aggregation_comparison/src/patient_bags.py",
+    "sha256": "da9bb83ec1e8907f220428a0dfa4854ebad471cde599f9e1b3bd66e547ff0dc6",
+    "provenance": "byte-identical completed baseline source"
+  },
+  {
+    "path": "experiments/aggregation_comparison/tests/test_protocol.py",
+    "sha256": "c4bff10372aed7c4a5e66897126bd3d203ebfa03f32988616991812b25f10d69",
+    "provenance": "byte-identical completed baseline source"
+  },
+  {
+    "path": "scripts_qc/__init__.py",
+    "sha256": "8c5620b5a2ebfa206e1a73339668ae05fdb31c1aa5567adf037f6026c620b590",
+    "provenance": "current reviewed adaptation/test/tool"
   },
   {
     "source": "scripts_qc/check_patient_mil_data_qc.py",
@@ -60,6 +86,101 @@
     "export_sha256": "631dee5139774a7b3c5a5ab96e129ad7ff4a82e2d59a7cc208ad8a99895eb202",
     "changes": [
       "UTF-8/LF normalization only; no algorithm changes."
-    ]
+    ],
+    "path": "scripts_qc/check_patient_mil_data_qc.py",
+    "sha256": "631dee5139774a7b3c5a5ab96e129ad7ff4a82e2d59a7cc208ad8a99895eb202",
+    "provenance": "stage0 source snapshot"
+  },
+  {
+    "source": "scripts_qc/prepare_whole_image_metadata.py",
+    "export": "scripts_qc/prepare_whole_image_metadata.py",
+    "original_sha256": "95ed37ff2aadf8b6301c1db2d86ef5596d30ecdd34f4e28d7a472a14f97ffb06",
+    "export_sha256": "95ed37ff2aadf8b6301c1db2d86ef5596d30ecdd34f4e28d7a472a14f97ffb06",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ],
+    "path": "scripts_qc/prepare_whole_image_metadata.py",
+    "sha256": "95ed37ff2aadf8b6301c1db2d86ef5596d30ecdd34f4e28d7a472a14f97ffb06",
+    "provenance": "stage0 source snapshot"
+  },
+  {
+    "source": "scripts_qc/preprocess_whole_fundus_images.py",
+    "export": "scripts_qc/preprocess_whole_fundus_images.py",
+    "original_sha256": "3fa1db91130769ccb899cec70fd10d360aa92a6a34ba1f9b0f51fb3dff91509b",
+    "export_sha256": "3fa1db91130769ccb899cec70fd10d360aa92a6a34ba1f9b0f51fb3dff91509b",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ],
+    "path": "scripts_qc/preprocess_whole_fundus_images.py",
+    "sha256": "3fa1db91130769ccb899cec70fd10d360aa92a6a34ba1f9b0f51fb3dff91509b",
+    "provenance": "stage0 source snapshot"
+  },
+  {
+    "source": "scripts_qc/train_effb0_conv_adapter_phpr_ema_pcar_auc.py",
+    "export": "scripts_qc/train_effb0_conv_adapter_phpr_ema_pcar_auc.py",
+    "original_sha256": "84493765cb7333199a78432d02a8dbc3e7b4b330e08b69817b9654dbfaec7151",
+    "export_sha256": "84493765cb7333199a78432d02a8dbc3e7b4b330e08b69817b9654dbfaec7151",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ],
+    "path": "scripts_qc/train_effb0_conv_adapter_phpr_ema_pcar_auc.py",
+    "sha256": "84493765cb7333199a78432d02a8dbc3e7b4b330e08b69817b9654dbfaec7151",
+    "provenance": "stage0 source snapshot"
+  },
+  {
+    "source": "scripts_qc/train_retfound_patient_mean_wbce.py",
+    "export": "scripts_qc/train_retfound_patient_mean_wbce.py",
+    "original_sha256": "3b2fd544188dc2a4b5328d3af15561db24dfe2db030413b0f17a090573c2efe8",
+    "export_sha256": "5ea5a865ee717d90b14619e8799f5a443552b71fa1071dc0842f2a60c0145e97",
+    "changes": [
+      "Require --retfound-root and --weight-path instead of personal absolute defaults."
+    ],
+    "path": "scripts_qc/train_retfound_patient_mean_wbce.py",
+    "sha256": "5ea5a865ee717d90b14619e8799f5a443552b71fa1071dc0842f2a60c0145e97",
+    "provenance": "stage0 source snapshot"
+  },
+  {
+    "source": "scripts_qc/train_whole_image_effb0_conv_adapter_phpr.py",
+    "export": "scripts_qc/train_whole_image_effb0_conv_adapter_phpr.py",
+    "original_sha256": "282aa99368a76ab9e05473fada86417b2aa8275f0e1935b343a769b43a9c492b",
+    "export_sha256": "282aa99368a76ab9e05473fada86417b2aa8275f0e1935b343a769b43a9c492b",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ],
+    "path": "scripts_qc/train_whole_image_effb0_conv_adapter_phpr.py",
+    "sha256": "282aa99368a76ab9e05473fada86417b2aa8275f0e1935b343a769b43a9c492b",
+    "provenance": "stage0 source snapshot"
+  },
+  {
+    "source": "scripts_qc/train_whole_image_effb0_frozen_patient_mean_wbce_backup.py",
+    "export": "scripts_qc/train_whole_image_effb0_frozen_patient_mean_wbce_backup.py",
+    "original_sha256": "80513be5a2ec82c7fe2c128aa10f9fa00fd033041e77ef3dc594205fe7ba3293",
+    "export_sha256": "80513be5a2ec82c7fe2c128aa10f9fa00fd033041e77ef3dc594205fe7ba3293",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ],
+    "path": "scripts_qc/train_whole_image_effb0_frozen_patient_mean_wbce_backup.py",
+    "sha256": "80513be5a2ec82c7fe2c128aa10f9fa00fd033041e77ef3dc594205fe7ba3293",
+    "provenance": "stage0 source snapshot"
+  },
+  {
+    "path": "tests/test_adapted_models.py",
+    "sha256": "4a6ac7a790c4daaee128068418818c058a33f299f2c9b9f29edce55001a3a834",
+    "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "tests/test_protocol.py",
+    "sha256": "312c52dfe7e6238b9fcd45fd5b606789090647da1fbf54ba13f32a31c96ec9bc",
+    "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "tests/test_synthetic_heads.py",
+    "sha256": "d41e7c351deb36f2948909a66936b1eb6cf7592bc8963fe220988c95c8f406da",
+    "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "tools/check_release.py",
+    "sha256": "3de62d8859317347ac8a8bfacec3d14e5fe44a7c3876e86f09d631bda0b10c85",
+    "provenance": "current reviewed adaptation/test/tool"
   }
 ]

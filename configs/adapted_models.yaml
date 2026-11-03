@@ -1,0 +1,40 @@
+# Audit/reference template; CLI does not read this YAML.
+shared:
+  encoder: frozen_imagenet_efficientnet_b0
+  input_dim: 1280
+  seed: 42
+  max_epochs: 100
+  patience: 20
+  optimizer: AdamW
+  lr: 0.001
+  weight_decay: 0.0001
+  patient_batch_size: 16
+  outer_folds: 5
+  inner_validation_fraction: 0.2
+  threshold: inner_validation_F1
+dgr_mil_adapted:
+  hidden_dim: 256
+  n_global: 5
+  heads: 8
+  landmarks: 128
+  short_bag_attention: exact
+  instance_value_residual: identity
+  global_value_residual: depthwise_conv
+  center_momentum: 0.4
+  auxiliary_start_epoch: 10
+  diversity_weight: 0.1
+  alignment_weight: 0.1
+  gram_jitter: 0.000001
+  classification: two_class_CE
+  checkpoint_eligibility: all_epochs_including_warmup
+acmil_ga_adapted:
+  hidden_dim: 256
+  attention_dim: 128
+  n_branches: 5
+  n_masked_patch: 10
+  mask_drop: 0.6
+  candidate_cap: K_valid_minus_1
+  count_rounding: floor
+  branch_ce_weight: 1.0
+  bag_ce_weight: 1.0
+  attention_diversity_weight: 1.0

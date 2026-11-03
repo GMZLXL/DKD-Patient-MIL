@@ -7,4 +7,5 @@ Pillow==12.2.0
 scikit-learn==1.6.1
 tqdm==4.67.3
 opencv-python==4.13.0.90
+PyYAML==6.0.3
 # RETFound runtime has separate upstream dependencies; see docs/dependencies.md.
