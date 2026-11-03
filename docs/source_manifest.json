@@ -25,6 +25,11 @@
     "provenance": "current reviewed adaptation/test/tool"
   },
   {
+    "path": "experiments/aggregation_comparison/scripts/train_adapted_cv_v2.py",
+    "sha256": "476dd3d9cbfc387255a548262984517b05757bcf00d1a70787f8adbbc209e861",
+    "provenance": "independent v2 remediation source/test; historical Python unchanged"
+  },
+  {
     "path": "experiments/aggregation_comparison/scripts/train_cv.py",
     "sha256": "42b0a05cc677f066fa42aee2b76e46c63c71ecd318a8872c12572ee938312878",
     "provenance": "byte-identical completed baseline source"
@@ -45,6 +50,11 @@
     "provenance": "current reviewed adaptation/test/tool"
   },
   {
+    "path": "experiments/aggregation_comparison/src/adapted_models/acmil_official_ratio.py",
+    "sha256": "8f32b02141fe21fcc8c747e5309e5536c36f684e88e0cbb10a6e3a91b465f780",
+    "provenance": "independent v2 remediation source/test; historical Python unchanged"
+  },
+  {
     "path": "experiments/aggregation_comparison/src/adapted_models/dgr_mil.py",
     "sha256": "ac60c5f87a1073fc30369060f9a42f7ec8d07bbe67c2f05374650791f8fbf4e6",
     "provenance": "current reviewed adaptation/test/tool"
@@ -60,6 +70,11 @@
     "provenance": "byte-identical completed baseline source"
   },
   {
+    "path": "experiments/aggregation_comparison/src/inner_cache_v2.py",
+    "sha256": "52b6d5444d71e14178ef2700fb964dc6a66482f8e1463a788ff2aa54b5998729",
+    "provenance": "independent v2 remediation source/test; historical Python unchanged"
+  },
+  {
     "path": "experiments/aggregation_comparison/src/metrics.py",
     "sha256": "776af0e812361cebbf6c6a69d16c5112a8272bbfbd2d5cb53c1cfc00be5cc71d",
     "provenance": "byte-identical completed baseline source"
@@ -68,6 +83,11 @@
     "path": "experiments/aggregation_comparison/src/patient_bags.py",
     "sha256": "da9bb83ec1e8907f220428a0dfa4854ebad471cde599f9e1b3bd66e547ff0dc6",
     "provenance": "byte-identical completed baseline source"
+  },
+  {
+    "path": "experiments/aggregation_comparison/src/protocol_v2.py",
+    "sha256": "31c42b31b8bb805ad52fc27843d8701c3278886da44495aa15f826f1dd0bb5d7",
+    "provenance": "independent v2 remediation source/test; historical Python unchanged"
   },
   {
     "path": "experiments/aggregation_comparison/tests/test_protocol.py",
@@ -169,9 +189,19 @@
     "provenance": "current reviewed adaptation/test/tool"
   },
   {
+    "path": "tests/test_adapted_models_v2.py",
+    "sha256": "f1b33a8f442f9950714e806d5fc15b52930ea65fc630daf7ed8d6dcf4792ee65",
+    "provenance": "independent v2 remediation source/test; historical Python unchanged"
+  },
+  {
     "path": "tests/test_protocol.py",
     "sha256": "312c52dfe7e6238b9fcd45fd5b606789090647da1fbf54ba13f32a31c96ec9bc",
     "provenance": "current reviewed adaptation/test/tool"
+  },
+  {
+    "path": "tests/test_protocol_v2.py",
+    "sha256": "0c9f9e09acf4b2a5f81d812296f32b2dd629e0de5741b68db5f00441c6681b89",
+    "provenance": "independent v2 remediation source/test; historical Python unchanged"
   },
   {
     "path": "tests/test_synthetic_heads.py",

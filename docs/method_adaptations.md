@@ -56,3 +56,35 @@ DGR 官方入口逐 epoch 调 test，并在 test 函数内部依据测试标签�
 ## 实际完成后的限制
 
 两种适配版已完成五折；DGR 的5折最终均由固定内层验证规则选择了 epoch<10 的 checkpoint。因此这些选中模型虽包含全局表征与交互结构，但尚未接受 diversity/triplet 辅助目标训练；后续 epoch 确实启用了目标，不能把后续训练与选中的 checkpoint 混为一谈。其结果仅标为 warmup-selected 的 DGR-adapted，不能当作完整训练目标的严格复现，也不用于宣称该目标的效果。没有依据外层测试表现修改选择规则或重跑。是否另立预先固定的 checkpoint eligibility 协议应由代码审查决定。
+
+## 本轮审查整改：独立v2，未运行正式五折
+
+审查基准 aa6137351f5ace7e67b943f3de8587526eb3025f。以上均为历史记录，旧 acmil.py、dgr_mil.py、nystrom.py、train_adapted_cv.py 和已完成25折保持不变。
+
+### ACMIL-GA-adapted-v2-official-mask
+
+新增 acmil_official_ratio.py，继承旧版网络与 objective，仅独立重写掩蔽候选数。新候选 `min(10,K_valid)`，丢弃 `min(K_valid-1,floor(candidates*.6))`；仅train生效，eval不掩蔽。旧入口仍返回旧 ACMILPatient，不会静默指向v2。网络、初始化参数布局、5分支、三项损失权重、学习率均不变。
+
+| K_valid | 旧版候选数 | 旧版丢弃数 | 新版候选数 | 新版丢弃数 |
+|---:|---:|---:|---:|---:|
+| 1 | 0 | 0 | 1 | 0 |
+| 2 | 1 | 0 | 2 | 1 |
+| 3 | 2 | 1 | 3 | 1 |
+| 4 | 3 | 1 | 4 | 2 |
+| 5 | 4 | 2 | 5 | 3 |
+| 6 | 5 | 3 | 6 | 3 |
+| 7 | 6 | 3 | 7 | 4 |
+| 8 | 7 | 4 | 8 | 4 |
+| 9 | 8 | 4 | 9 | 5 |
+
+这是官方候选比例对齐的患者级小bag安全适配，仍有最终 K-1 安全上限，并非未经修改的官方模型。合成测试验证上述数量、固定seed复现、mask_drop=1最坏情况、padding剔除、有限梯度、eval顺序无关，以及同权重下新旧eval预测相同。
+
+### DGR-MIL-adapted-fullobj-v2
+
+模型直接复用未修改的 DGRMILPatient。新增 protocol_v2.CheckpointPolicy 和 train_adapted_cv_v2.py，固定辅助目标从epoch10启用，epoch>=10才有资格保存最佳checkpoint；warmup既不能入选，也不累计正式patience。首个合格epoch建立基准，此后仍按内层val AUC优先、CE次之，预算100、patience20、目标/中心/Dropout均不变。
+
+checkpoint_selection.csv逐轮保存资格、是否入选、合格期stale计数、内层验证依据及辅助optimizer更新次数；checkpoint和报告保存 auxiliary_start_epoch、checkpoint_eligible_epoch、best_epoch、auxiliary_active_at_best_checkpoint。实际模型未报告辅助目标启用、没有完成辅助optimizer更新或选中epoch<10都会报错。验证仅依据内层集合；新split函数保持原分层规则并避免读取外层标签/特征。
+
+这是在看过旧结果后提出的**事后探索性/敏感性协议**，即使未来指标改善，也不能替换旧DGR或声称事前无偏优于PHPR。本阶段只完成资格smoke，不开展正式五折。Dropout实际值与上游入口差异见 model_config_diff.md；本轮没有把它们调成上游默认值。
+
+新CLI默认inner-only smoke；DGR smoke至少10轮，不能把2轮检查冒充完整资格验收。正式运行还要求当前v2 smoke gate及操作者在另行获得用户授权后显式传入 --formal-authorized；smoke通过不会自动触发正式运行。精确后续命令和前置条件见 review_commands_v2.md。

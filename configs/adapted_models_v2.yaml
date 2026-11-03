@@ -1,0 +1,46 @@
+# DOCUMENTATION/AUDIT TEMPLATE ONLY. train_adapted_cv_v2.py does NOT load this YAML.
+# Actual immutable protocol defaults are in protocol_v2.py and the versioned CLI.
+analysis_type: post_hoc_exploratory_sensitivity
+formal_cv_started_in_this_revision: false
+shared:
+  seed: 42
+  formal_max_epochs: 100
+  eligible_patience: 20
+  optimizer: AdamW
+  lr: 0.001
+  weight_decay: 0.0001
+  patient_batch_size: 16
+  outer_folds: 5
+  inner_validation_fraction: 0.2
+  checkpoint_ranking: inner_val_auc_then_lower_inner_val_ce
+  threshold: inner_validation_f1
+acmil_official_ratio:
+  variant: ACMIL-GA-adapted-v2-official-mask
+  hidden_dim: 256
+  attention_dim: 128
+  n_branches: 5
+  n_masked_patch: 10
+  mask_drop: 0.6
+  candidates: min_n_masked_patch_K_valid
+  n_drop: min_K_valid_minus_1_floor_candidates_times_mask_drop
+  checkpoint_eligible_epoch: 1
+  smoke_epochs: 2
+dgr_fullobj:
+  variant: DGR-MIL-adapted-fullobj-v2
+  hidden_dim: 256
+  n_global: 5
+  heads: 8
+  landmarks: 128
+  short_bag_attention: exact
+  auxiliary_start_epoch: 10
+  checkpoint_eligible_epoch: 10
+  warmup_counts_toward_patience: false
+  diversity_weight: 0.1
+  alignment_weight: 0.1
+  center_momentum: 0.4
+  gram_jitter: 0.000001
+  projection_dropout_configured: false
+  instance_attention_output_dropout: 0.1
+  global_attention_output_dropout: 0.1
+  cross_attention_probability_dropout: 0.1
+  smoke_epochs: 10

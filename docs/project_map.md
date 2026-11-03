@@ -33,3 +33,9 @@ experiments/aggregation_comparison/src/aggregators.py 是三基线实际模型�
 src/adapted_models/{dgr_mil,acmil,nystrom}.py 为独立适配；scripts/train_adapted_cv.py 仅训练新方法，受模型测试和单折 smoke gate 约束，复用相同 split/threshold。scripts/verify_adapted_runs.py 只读已保存产物核对全部方法，不重新运行 outer test 模型。
 
 顶层 tests/test_protocol.py 使用合成队列测试实际协议及 trainer 的防泄漏行为；原真实缓存测试逐字节存档在 experiments/aggregation_comparison/tests。上游版本、配置核对及差异见 upstream_source_manifest.json、phpr_configuration_audit.json、method_adaptations.md。
+
+## aa613735之后的v2整改
+
+新 acmil_official_ratio.py 继承旧GA架构/目标，仅独立修改候选比例，旧builder保持不变。protocol_v2.py 负责合格epoch、warmup不累计patience及不读外层标签的相同分层划分；inner_cache_v2.py 在smoke中仅构造开发患者的特征tensor，外层只留fold。train_adapted_cv_v2.py 独立命名/输出，复用旧train_epoch和内层predict函数，默认inner-only smoke。tests/test_adapted_models_v2.py、test_protocol_v2.py 均为合成测试。
+
+方法、配置模板、审查报告及未执行的未来命令分别见 method_adaptations.md、model_config_diff.md、code_review_remediation.md、review_commands_v2.md。原所有Python文件保持aa613735时的内容；只新增版本，不把历史入口重定向到新实现。

@@ -2,7 +2,7 @@
 
 眼底图像单模态的患者级多实例学习研究代码。研究队列为 **205 名患者、703 张 QC 后眼底图像**，每位患者 1～9 张图像，共同预测患者级 DKD 进展高/低风险。本仓库只包含代码、配置占位模板、合成测试和文档；数据由使用者在本地提供。
 
-当前交付为**聚合比较代码审查更新**：纳入三种已完成基线实际使用的代码，新增独立 DGR-MIL-adapted / ACMIL-GA-adapted 模块。模型及防泄漏测试、单折 smoke 通过后执行两种新方法五折；真实产物只保留在本地。三种基线不重训，历史结果不覆盖，完成后等待审查。
+当前交付为**aa613735 基准后的v2代码审查整改**：新增 ACMIL 官方候选比例对齐版，以及 DGR 完整辅助目标的 checkpoint 资格协议；旧版代码与已完成25折保留。当前只做合成测试和inner-only smoke，**没有启动新正式五折**。两个v2均为事后探索性/敏感性分析，等待下一次审查和授权。报告见 [code_review_remediation.md](docs/code_review_remediation.md)。
 
 ## 架构与代码入口
 
@@ -26,12 +26,17 @@ tools/check_release.py              # 代码导入、语法和发布文件检查
 tests/test_synthetic_heads.py       # 仅人工随机特征，CPU
 tests/test_protocol.py              # 实际划分、阈值和防泄漏回归的合成测试
 tests/test_adapted_models.py        # K=1..9、梯度、padding、中心和掩蔽
+tests/test_adapted_models_v2.py     # 官方比例数量、梯度与新旧eval一致
+tests/test_protocol_v2.py           # epoch>=10资格、早停和外层隔离
 experiments/aggregation_comparison/
   src/aggregators.py                # 已完成三基线的原样模型代码
   src/patient_bags.py、metrics.py    # 实际划分、缓存和验证阈值
   src/adapted_models/               # 独立 DGR / ACMIL / mask-safe Nystrom
+  src/adapted_models/acmil_official_ratio.py  # 独立ACMIL v2，不改旧入口
+  src/protocol_v2.py、inner_cache_v2.py       # 资格协议及inner-only读取
   scripts/train_cv.py               # 基线实际统一入口（存档，不重跑）
   scripts/train_adapted_cv.py        # 新方法的受 smoke gate 约束入口
+  scripts/train_adapted_cv_v2.py     # v2默认仅smoke，正式须额外授权和gate
   tests/test_protocol.py            # 原真实缓存协议测试源码（存档）
 docs/                              # 项目地图、实验状态、许可和审查计划
 ```
@@ -69,6 +74,8 @@ python scripts_qc/train_retfound_patient_mean_wbce.py --help
 历史 EfficientNet-B0 + Mean、Conv-Adapter + PHPR + EMA-PCAR、RETFound Encoder + Mean 已有本地实验记录。统一冻结 B0 的 Mean/Gated-ABMIL/PHPR 已完成五折，本次逐字节纳入实际代码，并核对 PHPR 五折均为 p1/lambda_proto=.1/lambda_std=0/temperature=.2，checkpoint 原型 shape=[2,256]。不重训、不上传结果；来源和核对见 docs/baseline_source_manifest.json、docs/phpr_configuration_audit.json。
 
 新方法使用相同 split/threshold 函数，保留必要目标，不复用官方逐轮测试集评估/阈值选择。K<=9 的 DGR 走精确 attention 分支；ACMIL 做小 bag 掩蔽。均为患者适配，不能声称原论文严格复现。DGR 最优 checkpoint 可能在辅助损失启用前，必须报告这一限制。详见 [method_adaptations.md](docs/method_adaptations.md)、[experiment_status.md](docs/experiment_status.md)、[review_commands.md](docs/review_commands.md)。
+
+上述为上一版本记录：旧DGR五折均为 warmup-selected，旧ACMIL五折候选数减1。本轮独立ACMIL v2使用 `min(n_masked_patch,K_valid)` 并最终保留至少一张；DGR fullobj-v2只允许epoch>=10且完成辅助更新的checkpoint，warmup不累计patience。当前22项测试通过；DGR资格smoke10轮、ACMIL smoke2轮均无outer test评估。Dropout只审计、不调整；[参数差异](docs/model_config_diff.md)及[未执行的未来正式命令](docs/review_commands_v2.md)均已记录。
 
 ## 数据与第三方代码边界
 

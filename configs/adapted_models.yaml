@@ -27,6 +27,11 @@ dgr_mil_adapted:
   gram_jitter: 0.000001
   classification: two_class_CE
   checkpoint_eligibility: all_epochs_including_warmup
+  # Actual historical module audit; these fields do not configure the CLI.
+  projection_dropout_configured: false
+  instance_attention_output_dropout: 0.1
+  global_attention_output_dropout: 0.1
+  cross_attention_probability_dropout: 0.1
 acmil_ga_adapted:
   hidden_dim: 256
   attention_dim: 128
