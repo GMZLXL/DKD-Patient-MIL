@@ -1,0 +1,65 @@
+[
+  {
+    "source": "scripts_qc/train_whole_image_effb0_conv_adapter_phpr.py",
+    "export": "scripts_qc/train_whole_image_effb0_conv_adapter_phpr.py",
+    "original_sha256": "282aa99368a76ab9e05473fada86417b2aa8275f0e1935b343a769b43a9c492b",
+    "export_sha256": "282aa99368a76ab9e05473fada86417b2aa8275f0e1935b343a769b43a9c492b",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ]
+  },
+  {
+    "source": "scripts_qc/train_effb0_conv_adapter_phpr_ema_pcar_auc.py",
+    "export": "scripts_qc/train_effb0_conv_adapter_phpr_ema_pcar_auc.py",
+    "original_sha256": "84493765cb7333199a78432d02a8dbc3e7b4b330e08b69817b9654dbfaec7151",
+    "export_sha256": "84493765cb7333199a78432d02a8dbc3e7b4b330e08b69817b9654dbfaec7151",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ]
+  },
+  {
+    "source": "scripts_qc/train_whole_image_effb0_frozen_patient_mean_wbce_backup.py",
+    "export": "scripts_qc/train_whole_image_effb0_frozen_patient_mean_wbce_backup.py",
+    "original_sha256": "80513be5a2ec82c7fe2c128aa10f9fa00fd033041e77ef3dc594205fe7ba3293",
+    "export_sha256": "80513be5a2ec82c7fe2c128aa10f9fa00fd033041e77ef3dc594205fe7ba3293",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ]
+  },
+  {
+    "source": "scripts_qc/train_retfound_patient_mean_wbce.py",
+    "export": "scripts_qc/train_retfound_patient_mean_wbce.py",
+    "original_sha256": "3b2fd544188dc2a4b5328d3af15561db24dfe2db030413b0f17a090573c2efe8",
+    "export_sha256": "5ea5a865ee717d90b14619e8799f5a443552b71fa1071dc0842f2a60c0145e97",
+    "changes": [
+      "Require --retfound-root and --weight-path instead of personal absolute defaults."
+    ]
+  },
+  {
+    "source": "scripts_qc/prepare_whole_image_metadata.py",
+    "export": "scripts_qc/prepare_whole_image_metadata.py",
+    "original_sha256": "95ed37ff2aadf8b6301c1db2d86ef5596d30ecdd34f4e28d7a472a14f97ffb06",
+    "export_sha256": "95ed37ff2aadf8b6301c1db2d86ef5596d30ecdd34f4e28d7a472a14f97ffb06",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ]
+  },
+  {
+    "source": "scripts_qc/preprocess_whole_fundus_images.py",
+    "export": "scripts_qc/preprocess_whole_fundus_images.py",
+    "original_sha256": "3fa1db91130769ccb899cec70fd10d360aa92a6a34ba1f9b0f51fb3dff91509b",
+    "export_sha256": "3fa1db91130769ccb899cec70fd10d360aa92a6a34ba1f9b0f51fb3dff91509b",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ]
+  },
+  {
+    "source": "scripts_qc/check_patient_mil_data_qc.py",
+    "export": "scripts_qc/check_patient_mil_data_qc.py",
+    "original_sha256": "631dee5139774a7b3c5a5ab96e129ad7ff4a82e2d59a7cc208ad8a99895eb202",
+    "export_sha256": "631dee5139774a7b3c5a5ab96e129ad7ff4a82e2d59a7cc208ad8a99895eb202",
+    "changes": [
+      "UTF-8/LF normalization only; no algorithm changes."
+    ]
+  }
+]

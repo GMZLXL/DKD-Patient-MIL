@@ -1,0 +1,10 @@
+# Versions verified for imports and synthetic CPU tests, not a full training lock.
+torch==2.7.0
+torchvision==0.22.0
+numpy==2.2.6
+pandas==2.3.3
+Pillow==12.2.0
+scikit-learn==1.6.1
+tqdm==4.67.3
+opencv-python==4.13.0.90
+# RETFound runtime has separate upstream dependencies; see docs/dependencies.md.

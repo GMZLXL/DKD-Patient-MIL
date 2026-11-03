@@ -1,0 +1,23 @@
+# Documentation template only; original scripts accept CLI flags, not this YAML.
+data:
+  metadata: <LOCAL_METADATA_CSV>
+  labels: <LOCAL_LABELS_CSV>
+  processed_images: <LOCAL_PROCESSED_IMAGE_DIRECTORY>
+  expected_patients: 205
+  expected_images: 703
+  image_size: 384
+  bag_size_min: 1
+  bag_size_max: 9
+encoder:
+  name: efficientnet_b0
+  weights: <LOCAL_IMAGENET_WEIGHTS>
+  frozen_for_future_comparison: true
+retfound:
+  source_root: <LOCAL_RETFOUND_SOURCE_ROOT>
+  weights: <LOCAL_RETFOUND_CHECKPOINT>
+output_directory: <LOCAL_OUTPUT_DIRECTORY>
+future_protocol:
+  seed: 42
+  outer_folds: 5
+  inner_validation: stratified_patients
+  test_policy: evaluate_once_after_inner_validation_selection
