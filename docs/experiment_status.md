@@ -1,5 +1,7 @@
 # 实验状态（本轮更新后，等待代码审查）
 
+最新CPU优化阶段：用户曾明确授权C0–C2正式训练；原任务在C0 fold0完成37轮后，应用户选择停止并保留全部文件，尚无完成的outer fold。现在只验证独立CPU后端，科学协议不变，优化版正式训练未启动。四worker轨迹/梯度/保存恢复测试及三组真实384图像inner-only smoke通过；完整内层配对测速与等价核验见 [controlled_pooling_cpu.md](controlled_pooling_cpu.md)。新增只读正式核验器暂未用于真实完整五折。下文为前阶段历史记录，不能当作当前任务已经完成15折。
+
 2026-11-15最新：新增完整框架聚合替换第一阶段，C0/C1/C2共享Conv-Adapter + EMA-PCAR；用户指定真实历史配置已与5个checkpoint args对齐。7项新增合成测试、历史22+6项合成回归及三组fold0真实图像inner-only smoke通过，outer test推理0、新正式折数0。C3/C4仅静态可行性评估、未实现。历史冻结特征35折保留且未重训；以下历史阶段记录不表示本轮运行状态。详见 [controlled_pooling_review.md](controlled_pooling_review.md) 和 [protocol_v1.md](../experiments/controlled_pooling_adapter_ema/protocol_v1.md)。本阶段结束等待审查，未获新正式训练授权。
 
 | 工作 | 状态 | 与下一阶段的关系 |

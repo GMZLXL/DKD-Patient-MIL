@@ -2,7 +2,7 @@
 
 眼底图像单模态的患者级多实例学习研究代码。研究队列为 **205 名患者、703 张 QC 后眼底图像**，每位患者 1～9 张图像，共同预测患者级 DKD 进展高/低风险。本仓库只包含代码、配置占位模板、合成测试和文档；数据由使用者在本地提供。
 
-当前交付为**完整框架聚合替换第一阶段**：以用户确认的历史配置，新增共享可训练Conv-Adapter与EMA-PCAR的C0 Mean / C1 Gated-ABMIL / C2 PHPR-p1统一nested入口。7项新合成测试及三组真实图像inner-only smoke通过；本轮未启动正式五折。见 [冻结协议](experiments/controlled_pooling_adapter_ema/protocol_v1.md)、[配置与执行审查](docs/controlled_pooling_review.md)、[未来运行命令](docs/controlled_pooling_commands.md)。C3/C4目前仅有静态适配评估。此前冻结特征35折全部保留，记录见 [v2_formal_execution.md](docs/v2_formal_execution.md)，不与本实验混表。
+当前工作为**CPU执行优化验证**：用户授权的原正式任务在C0 fold0完成37轮后，按用户选择停止并完整保留，尚无完成的外层折。新增独立CPU后端，复用全部模型/损失/epoch/选模代码，仅调整worker生命周期与验证加载；结果见 [CPU协议与验证报告](docs/controlled_pooling_cpu.md)。优化版正式五折未启动，C3/C4未实现。原研究条件见 [冻结协议](experiments/controlled_pooling_adapter_ema/protocol_v1.md)，第一阶段审查见 [配置报告](docs/controlled_pooling_review.md)。此前冻结特征35折全部保留，记录见 [v2_formal_execution.md](docs/v2_formal_execution.md)，不与本实验混表。
 
 ## 架构与代码入口
 
@@ -46,6 +46,12 @@ experiments/controlled_pooling_adapter_ema/
   train.py                         # 默认inner-only smoke；正式须新授权与当前gate
   tests/test_controlled.py         # 合成图像/梯度/保存恢复/防泄漏7项测试
   protocol_v1.md                   # 用户确认配置及预先固定的nested协议
+experiments/controlled_pooling_cpu/
+  loaders.py                       # 保留原逐轮随机轨迹的常驻训练worker
+  train.py                         # 作用域内替换loader，复用原统一trainer
+  tests/test_cpu_loaders.py         # 四worker、模型/优化器轨迹和异常清理
+tools/verify_controlled_pooling.py  # inner-val重放与落盘outer指标独立核验
+tests/test_controlled_verification.py # 核验器6项合成测试
 ```
 
 各类和函数的对应关系见 [project_map.md](docs/project_map.md)。没有为目录美观抽取模型或改写历史训练流程。

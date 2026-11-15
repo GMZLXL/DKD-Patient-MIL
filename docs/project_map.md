@@ -1,5 +1,11 @@
 # 项目地图
 
+## CPU执行后端
+
+`experiments/controlled_pooling_cpu/loaders.py` 封装常驻训练worker、原base_seed消耗及逐轮重置，验证/测试使用主进程加载；`train.py` 通过作用域内依赖注入调用原run_fold，finally清理pool，不改写旧入口；`tests/test_cpu_loaders.py` 验证四worker采样/增强/模型优化器轨迹、K=1–9、异常恢复及新授权门禁。独立版本说明和实测见 controlled_pooling_cpu.md。
+
+`tools/verify_controlled_pooling.py` 是完整任务完成后使用的只读核验器，检查inner选模/阈值、EMA、验证重放和落盘outer九指标/pooled OOF，禁止outer模型重放；`tests/test_controlled_verification.py` 用6项合成回归验证。原任务已应用户选择停止，当前没有完整15折可核验。
+
 ## 完整框架聚合替换第一阶段
 
 新增 `experiments/controlled_pooling_adapter_ema/core.py` 复用历史Encoder、三种PatientPoolingHead和EMA loss，统一公共初始化、训练相位和criterion恢复；`train.py` 提供独立nested入口，默认inner-only smoke，正式需新授权及当前gate；`tests/test_controlled.py` 含7项合成图像/梯度/EMA/防泄漏回归；`protocol_v1.md` 冻结用户确认配置。没有更改旧训练入口。状态、C3/C4静态评估和未来命令见 controlled_pooling_review.md、controlled_pooling_commands.md。以下为历史代码地图。

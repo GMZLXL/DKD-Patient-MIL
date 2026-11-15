@@ -125,6 +125,26 @@
     "provenance": "independent controlled-pooling phase1 source or synthetic test; historical training sources unchanged"
   },
   {
+    "path": "experiments/controlled_pooling_cpu/__init__.py",
+    "sha256": "33ca5c354a0aaea4a9da165aed6a4be7e62f1df32ce1d6af9fe9e320c83f79d6",
+    "provenance": "independent CPU execution backend, four-worker synthetic tests, or read-only controlled-run verifier"
+  },
+  {
+    "path": "experiments/controlled_pooling_cpu/loaders.py",
+    "sha256": "f254d74c04c023ffdbdc30ccdc4d4e3936741f17671296c71496b0586e11e946",
+    "provenance": "independent CPU execution backend, four-worker synthetic tests, or read-only controlled-run verifier"
+  },
+  {
+    "path": "experiments/controlled_pooling_cpu/tests/test_cpu_loaders.py",
+    "sha256": "48634b295e6bbb1728e97aee122dcc23413bf4b5b25bea578c47c838a85a56b3",
+    "provenance": "independent CPU execution backend, four-worker synthetic tests, or read-only controlled-run verifier"
+  },
+  {
+    "path": "experiments/controlled_pooling_cpu/train.py",
+    "sha256": "5087d59d987255c1692243b0a393d58127d512df1c30170fc9949ea436987ea1",
+    "provenance": "independent CPU execution backend, four-worker synthetic tests, or read-only controlled-run verifier"
+  },
+  {
     "path": "scripts_qc/__init__.py",
     "sha256": "8c5620b5a2ebfa206e1a73339668ae05fdb31c1aa5567adf037f6026c620b590",
     "provenance": "current reviewed adaptation/test/tool"
@@ -224,6 +244,11 @@
     "provenance": "independent v2 remediation source/test; historical Python unchanged"
   },
   {
+    "path": "tests/test_controlled_verification.py",
+    "sha256": "6399fc3b1c9d914378455e1443992302a68a03f80f7b92fd7840bfc551797ddf",
+    "provenance": "independent CPU execution backend, four-worker synthetic tests, or read-only controlled-run verifier"
+  },
+  {
     "path": "tests/test_protocol.py",
     "sha256": "312c52dfe7e6238b9fcd45fd5b606789090647da1fbf54ba13f32a31c96ec9bc",
     "provenance": "current reviewed adaptation/test/tool"
@@ -240,7 +265,12 @@
   },
   {
     "path": "tools/check_release.py",
-    "sha256": "4e6e1a85ef1b5f19d5003b00a7b7927fc891ec1a2ce7cdc294fba36d76e450ae",
-    "provenance": "source-only release whitelist extended for controlled-pooling experiment"
+    "sha256": "5f75b89d8a4987c3146577038c0d0ce3c0b4ecbc5d4b88d7cc757482785327eb",
+    "provenance": "source-only release whitelist extended for independent CPU backend"
+  },
+  {
+    "path": "tools/verify_controlled_pooling.py",
+    "sha256": "fb12d5d80df9993b46f7a2fb609ca6c822695635e85d86bb0d565a1b9ee802f9",
+    "provenance": "independent CPU execution backend, four-worker synthetic tests, or read-only controlled-run verifier"
   }
 ]
