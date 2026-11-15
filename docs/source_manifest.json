@@ -40,6 +40,11 @@
     "provenance": "current reviewed adaptation/test/tool"
   },
   {
+    "path": "experiments/aggregation_comparison/scripts/verify_v2_runs.py",
+    "sha256": "611aeee8634958ee8040c8e40a3efcab638e5d02411075f93daca388094d761f",
+    "provenance": "read-only v2 verification/statistics or synthetic verifier tests; training code unchanged"
+  },
+  {
     "path": "experiments/aggregation_comparison/src/adapted_models/__init__.py",
     "sha256": "20f8198eb89ec6f9de3a14cfa3771746f26856a7d6f5edf7d2423175cacb25cd",
     "provenance": "current reviewed adaptation/test/tool"
@@ -93,6 +98,11 @@
     "path": "experiments/aggregation_comparison/tests/test_protocol.py",
     "sha256": "c4bff10372aed7c4a5e66897126bd3d203ebfa03f32988616991812b25f10d69",
     "provenance": "byte-identical completed baseline source"
+  },
+  {
+    "path": "experiments/aggregation_comparison/tests/test_verify_v2_runs.py",
+    "sha256": "0f2fc3495f55e5759074c5d8effc6c3926d9e1904a76ce79d546e2045d13dc96",
+    "provenance": "read-only v2 verification/statistics or synthetic verifier tests; training code unchanged"
   },
   {
     "path": "scripts_qc/__init__.py",

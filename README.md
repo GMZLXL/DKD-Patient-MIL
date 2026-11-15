@@ -2,7 +2,7 @@
 
 眼底图像单模态的患者级多实例学习研究代码。研究队列为 **205 名患者、703 张 QC 后眼底图像**，每位患者 1～9 张图像，共同预测患者级 DKD 进展高/低风险。本仓库只包含代码、配置占位模板、合成测试和文档；数据由使用者在本地提供。
 
-当前交付为**aa613735 基准后的v2代码审查整改**：新增 ACMIL 官方候选比例对齐版，以及 DGR 完整辅助目标的 checkpoint 资格协议；旧版代码与已完成25折保留。当前只做合成测试和inner-only smoke，**没有启动新正式五折**。两个v2均为事后探索性/敏感性分析，等待下一次审查和授权。报告见 [code_review_remediation.md](docs/code_review_remediation.md)。
+当前交付为**2026-11-15授权的v2正式执行与核验**：按ed311338固定代码完成DGR fullobj-v2、ACMIL official-mask-v2各五折，新增10折/410条OOF；原25折保留，总计35折。模型、训练入口、参数、冻结特征和患者划分未改。两个v2为事后探索性敏感性分析，真实结果仅留本地，等待审查。脱敏状态见 [v2_formal_execution.md](docs/v2_formal_execution.md)，前一阶段整改记录保留在 [code_review_remediation.md](docs/code_review_remediation.md)。
 
 ## 架构与代码入口
 
@@ -37,6 +37,8 @@ experiments/aggregation_comparison/
   scripts/train_cv.py               # 基线实际统一入口（存档，不重跑）
   scripts/train_adapted_cv.py        # 新方法的受 smoke gate 约束入口
   scripts/train_adapted_cv_v2.py     # v2默认仅smoke，正式须额外授权和gate
+  scripts/verify_v2_runs.py          # 独立v2资格/指标/配对bootstrap核验
+  tests/test_verify_v2_runs.py       # 不改变训练gate的6项合成核验测试
   tests/test_protocol.py            # 原真实缓存协议测试源码（存档）
 docs/                              # 项目地图、实验状态、许可和审查计划
 ```
@@ -76,6 +78,8 @@ python scripts_qc/train_retfound_patient_mean_wbce.py --help
 新方法使用相同 split/threshold 函数，保留必要目标，不复用官方逐轮测试集评估/阈值选择。K<=9 的 DGR 走精确 attention 分支；ACMIL 做小 bag 掩蔽。均为患者适配，不能声称原论文严格复现。DGR 最优 checkpoint 可能在辅助损失启用前，必须报告这一限制。详见 [method_adaptations.md](docs/method_adaptations.md)、[experiment_status.md](docs/experiment_status.md)、[review_commands.md](docs/review_commands.md)。
 
 上述为上一版本记录：旧DGR五折均为 warmup-selected，旧ACMIL五折候选数减1。本轮独立ACMIL v2使用 `min(n_masked_patch,K_valid)` 并最终保留至少一张；DGR fullobj-v2只允许epoch>=10且完成辅助更新的checkpoint，warmup不累计patience。当前22项测试通过；DGR资格smoke10轮、ACMIL smoke2轮均无outer test评估。Dropout只审计、不调整；[参数差异](docs/model_config_diff.md)及[未执行的未来正式命令](docs/review_commands_v2.md)均已记录。
+
+2026-11-15更新：用户随后明确授权两个v2正式五折，前置检查和有效gate核对后已完成。新核验器6项合成测试通过，10个新折的资格/阈值/九指标核验通过，核验阶段outer test模型推理次数0。原始五方法表、v2探索性表、pooled OOF CI和患者配对bootstrap均只保存在本地，没有将真实指标或预测提交GitHub。
 
 ## 数据与第三方代码边界
 

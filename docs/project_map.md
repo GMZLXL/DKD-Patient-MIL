@@ -39,3 +39,7 @@ src/adapted_models/{dgr_mil,acmil,nystrom}.py 为独立适配；scripts/train_ad
 新 acmil_official_ratio.py 继承旧GA架构/目标，仅独立修改候选比例，旧builder保持不变。protocol_v2.py 负责合格epoch、warmup不累计patience及不读外层标签的相同分层划分；inner_cache_v2.py 在smoke中仅构造开发患者的特征tensor，外层只留fold。train_adapted_cv_v2.py 独立命名/输出，复用旧train_epoch和内层predict函数，默认inner-only smoke。tests/test_adapted_models_v2.py、test_protocol_v2.py 均为合成测试。
 
 方法、配置模板、审查报告及未执行的未来命令分别见 method_adaptations.md、model_config_diff.md、code_review_remediation.md、review_commands_v2.md。原所有Python文件保持aa613735时的内容；只新增版本，不把历史入口重定向到新实现。
+
+## 2026-11-15独立核验程序
+
+新增 scripts/verify_v2_runs.py：专门核对v2合格checkpoint、辅助更新、patience、与原Mean相同划分，重放inner val验证分数/阈值；测试九指标只从保存的预测独立复算。生成原始五方法表与v2敏感性表、pooled OOF九指标患者CI、配对bootstrap；不运行outer test模型。新增实验tests/test_verify_v2_runs.py的6项合成测试单独执行，原训练gate清单不变。全部真实输入/输出均在仓库外。

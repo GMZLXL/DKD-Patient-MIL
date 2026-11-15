@@ -10,8 +10,8 @@
 | DGR-MIL-adapted | 完成模型/梯度/K=1..9/单折 smoke 后，完成五折 | 使用独立新目录。**5/5折验证最优 checkpoint 均早于辅助损失启用，不可视为完整辅助目标已验证或严格原方法复现** |
 | ACMIL-GA-adapted | 完成模型/梯度/K=1..9/单折 smoke 后，完成五折 | 保留分支/attention diversity/训练掩蔽；每折测试只评估一次；不是 MHA 变体 |
 | PHPR 配置核对 | 五折配置与 checkpoint 形状一致 | p1、lambda_proto=.1、lambda_std=0、temperature=.2；没有 Adapter/EMA-PCAR |
-| ACMIL-GA-adapted-v2-official-mask | 22项合成测试中的对应测试及真实inner-only 2轮smoke通过；**正式五折0折** | 独立版本，候选数按K_valid；旧ACMIL实现及五折不变 |
-| DGR-MIL-adapted-fullobj-v2 | 合格checkpoint回归及真实inner-only 10轮smoke通过；**正式五折0折** | epoch>=10才选模/累计patience；真实smoke best_epoch=10且有辅助更新；不替换旧DGR |
+| ACMIL-GA-adapted-v2-official-mask | 2026-11-15获授权后正式五折完成，205条OOF，独立核验通过 | 官方候选比例患者适配；保留旧ACMIL及五折 |
+| DGR-MIL-adapted-fullobj-v2 | 2026-11-15获授权后正式五折完成，205条OOF，独立核验通过 | 五折均在辅助目标启用并更新后选模；不替换旧warmup-selected结果 |
 | AttriMIL | 扩展性评估待开展 | 无天然病理空间坐标，不能用图像序号替代 |
 | TDA-MIL | 暂无可用实现 | 官方当前 README 标注 available soon，不安排训练 |
 
@@ -20,3 +20,5 @@
 公开仓库仅发布源代码、非敏感配置核查和运行完成状态；没有真实患者数据/预测、缓存、权重、结果CSV或训练日志。DGR 的 warmup 限制、不同 head 参数量、单种子/单候选预算都需要审查，不能宣称严格论文复现或显著优于。完成此提交后停止，等待审查。
 
 本轮审查整改以aa613735为基准，正式实验总数仍是25折；234个历史产物/缓存文件、27个历史Python源码的前后SHA256一致。两个v2是事后敏感性分析，仅完成模型/资格/隔离测试及单折smoke，不产生新的outer test结果。本阶段明确禁止正式五折，后续必须再次授权。
+
+以上段落是前一阶段历史记录。2026-11-15用户明确授权后，以ed311338为训练基准完成新10折；现在总计35折。当前核验确认234个旧产物/缓存及33个旧Python文件SHA不变；两个v2共410条OOF、划分与Mean相同、九指标复算一致，核验无outer test模型重放。22项原测试与6项新增核验器合成测试通过；仅发布脱敏状态，性能和真实产物留本地。详见v2_formal_execution.md。
