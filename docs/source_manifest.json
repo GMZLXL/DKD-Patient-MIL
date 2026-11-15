@@ -245,8 +245,8 @@
   },
   {
     "path": "tests/test_controlled_verification.py",
-    "sha256": "6399fc3b1c9d914378455e1443992302a68a03f80f7b92fd7840bfc551797ddf",
-    "provenance": "independent CPU execution backend, four-worker synthetic tests, or read-only controlled-run verifier"
+    "sha256": "99027b4b05cda8e80687b32427933d340c89b2f87c632a089c4cb19c1dbe3ea8",
+    "provenance": "read-only verifier float32 weight and Dataset fold-field remediation; training code unchanged"
   },
   {
     "path": "tests/test_protocol.py",
@@ -270,7 +270,7 @@
   },
   {
     "path": "tools/verify_controlled_pooling.py",
-    "sha256": "fb12d5d80df9993b46f7a2fb609ca6c822695635e85d86bb0d565a1b9ee802f9",
-    "provenance": "independent CPU execution backend, four-worker synthetic tests, or read-only controlled-run verifier"
+    "sha256": "928149e9414d209e43171a9d1b44a03bfeb44d27bad6d1736d7e0657bb2c3fe4",
+    "provenance": "read-only verifier float32 weight and Dataset fold-field remediation; training code unchanged"
   }
 ]

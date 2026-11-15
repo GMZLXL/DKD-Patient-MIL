@@ -71,3 +71,5 @@ python experiments/controlled_pooling_cpu/train.py --group all --mode formal --f
 两种执行逐epoch的输入、模型、EMA/criterion、optimizer、scheduler、parent/loader RNG及raw/calibrated val概率全部精确一致。原执行的前3轮记录还与已中断原任务前3轮精确一致。指标没有用于挑选优化设置，未进行outer模型推理。
 
 当前没有新的正式折或正式比较表；原37轮未完成任务保留，旧35折及已登记历史产物不变。新版只通过测试/Smoke/配对执行验证，停在此处等待审查与新正式授权。
+
+以上为CPU验证阶段的历史状态。用户随后明确授权启动优化版正式15折。启动前只修正独立核验器：类别权重按训练时实际保存的float32表示比较，验证回放补全原Dataset必需的fold字段；新增两项合成回归，核验器8项测试及三组已保存inner-only smoke的实际回放通过。模型、损失、CPU后端和其门禁绑定的11个训练/测试源文件逐字节不变。正式执行使用独立新目录，从统一初始化开始，不恢复或覆盖原37轮任务；运行状态和真实产物仍只留本地。

@@ -28,6 +28,13 @@ def load(path):return json.loads(Path(path).read_text(encoding='utf-8'))
 
 def csv(path):return pd.read_csv(path,dtype={'patient_id':str},float_precision='round_trip')
 
+def training_positive_weight(labels):
+    y=np.asarray(labels)
+    require(set(y)=={0,1},'Inner training weight requires both classes')
+    # The trainer constructs torch.tensor([negative/positive]) in float32, then
+    # writes float(tensor) to JSON. Compare to that representation, not float64.
+    return float(np.float32((y==0).sum()/(y==1).sum()))
+
 def validation_threshold(y,p):
     y=np.asarray(y);p=np.asarray(p)
     choices=np.unique(np.r_[0.,.5,1.,p])
@@ -82,7 +89,8 @@ def replay_validation(group,checkpoint,config,split,index_path,weights):
     items=[]
     for pid in split['val']:
         rows=index[index.patient_id==pid]
-        items.append(dict(patient_id=pid,label=int(rows.label.iloc[0]),paths=rows.resolved_path.tolist()))
+        items.append(dict(patient_id=pid,label=int(rows.label.iloc[0]),fold=int(rows.fold.iloc[0]),
+            paths=rows.resolved_path.tolist()))
     require(not (set(split['val'])&set(split['test'])),'Outer images in validation replay')
     model=ControlledModel(group,weights).eval()
     criterion=SharedEMAPCAR(torch.tensor([config['pos_weight']])).eval()
@@ -148,7 +156,7 @@ def verify(args):
             tr,va=train_test_split(dev,test_size=.2,random_state=42,stratify=labels)
             require(set(tr)==sets[0] and set(va)==sets[1],'Inner stratified split differs')
             train_labels=patient_index.set_index('patient_id').loc[split['train']].label.values
-            pos_weight=float((train_labels==0).sum()/(train_labels==1).sum())
+            pos_weight=training_positive_weight(train_labels)
             require(abs(config['pos_weight']-pos_weight)<1e-12,'BCE weight used non-training labels')
             checkpoint=torch.load(folder/'best_model.pt',map_location='cpu',weights_only=True)
             best_epoch=checkpoint_selection(h,checkpoint)
