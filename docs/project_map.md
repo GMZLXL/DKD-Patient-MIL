@@ -1,5 +1,9 @@
 # 项目地图
 
+## 完整框架聚合替换第一阶段
+
+新增 `experiments/controlled_pooling_adapter_ema/core.py` 复用历史Encoder、三种PatientPoolingHead和EMA loss，统一公共初始化、训练相位和criterion恢复；`train.py` 提供独立nested入口，默认inner-only smoke，正式需新授权及当前gate；`tests/test_controlled.py` 含7项合成图像/梯度/EMA/防泄漏回归；`protocol_v1.md` 冻结用户确认配置。没有更改旧训练入口。状态、C3/C4静态评估和未来命令见 controlled_pooling_review.md、controlled_pooling_commands.md。以下为历史代码地图。
+
 这是非破坏性、白名单式代码快照，不是完整原始工作盘的镜像。源代码相对位置和 SHA256 在 source_manifest.json；原始磁盘位置不写入仓库。
 
 | 功能 | 文件（均在 scripts_qc/） | 核心符号 |

@@ -1,5 +1,7 @@
 # 患者级适配与代码审查记录（2026-11-03）
 
+2026-11-15新增独立的完整框架聚合替换实验：C0/C1/C2复用原Conv-Adapter/聚合头/EMA-PCAR，通过合成测试及inner-only smoke，未启动新正式五折。C3/C4仅评估 `aggregation-only + shared loss` 的可行性；移除原生辅助目标后不能称完整官方方法，当前未实现。具体结构保留、目标剥离与梯度风险见 [controlled_pooling_review.md](controlled_pooling_review.md)，统一协议见 [protocol_v1.md](../experiments/controlled_pooling_adapter_ema/protocol_v1.md)。以下冻结特征方法及其历史结果保持原样。
+
 ## 已完成基线的实际代码已纳入
 
 `experiments/aggregation_comparison/src/{aggregators,patient_bags,metrics}.py` 和 `scripts/train_cv.py` 是已完成 Mean / Gated-ABMIL / PHPR 五折实验实际用过的逐字节代码，不是另写的展示版。对应实际源摘要见 baseline_source_manifest.json。原 real-cache `tests/test_protocol.py` 也按原样保留在该实验目录；仓库顶层 tests/test_protocol.py 用人工合成队列测试相同 split/metrics/threshold 函数，公开测试不需要患者缓存。

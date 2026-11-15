@@ -2,7 +2,7 @@
 
 眼底图像单模态的患者级多实例学习研究代码。研究队列为 **205 名患者、703 张 QC 后眼底图像**，每位患者 1～9 张图像，共同预测患者级 DKD 进展高/低风险。本仓库只包含代码、配置占位模板、合成测试和文档；数据由使用者在本地提供。
 
-当前交付为**2026-11-15授权的v2正式执行与核验**：按ed311338固定代码完成DGR fullobj-v2、ACMIL official-mask-v2各五折，新增10折/410条OOF；原25折保留，总计35折。模型、训练入口、参数、冻结特征和患者划分未改。两个v2为事后探索性敏感性分析，真实结果仅留本地，等待审查。脱敏状态见 [v2_formal_execution.md](docs/v2_formal_execution.md)，前一阶段整改记录保留在 [code_review_remediation.md](docs/code_review_remediation.md)。
+当前交付为**完整框架聚合替换第一阶段**：以用户确认的历史配置，新增共享可训练Conv-Adapter与EMA-PCAR的C0 Mean / C1 Gated-ABMIL / C2 PHPR-p1统一nested入口。7项新合成测试及三组真实图像inner-only smoke通过；本轮未启动正式五折。见 [冻结协议](experiments/controlled_pooling_adapter_ema/protocol_v1.md)、[配置与执行审查](docs/controlled_pooling_review.md)、[未来运行命令](docs/controlled_pooling_commands.md)。C3/C4目前仅有静态适配评估。此前冻结特征35折全部保留，记录见 [v2_formal_execution.md](docs/v2_formal_execution.md)，不与本实验混表。
 
 ## 架构与代码入口
 
@@ -41,6 +41,11 @@ experiments/aggregation_comparison/
   tests/test_verify_v2_runs.py       # 不改变训练gate的6项合成核验测试
   tests/test_protocol.py            # 原真实缓存协议测试源码（存档）
 docs/                              # 项目地图、实验状态、许可和审查计划
+experiments/controlled_pooling_adapter_ema/
+  core.py                          # 复用原Encoder/聚合头/EMA loss的统一封装
+  train.py                         # 默认inner-only smoke；正式须新授权与当前gate
+  tests/test_controlled.py         # 合成图像/梯度/保存恢复/防泄漏7项测试
+  protocol_v1.md                   # 用户确认配置及预先固定的nested协议
 ```
 
 各类和函数的对应关系见 [project_map.md](docs/project_map.md)。没有为目录美观抽取模型或改写历史训练流程。

@@ -105,6 +105,26 @@
     "provenance": "read-only v2 verification/statistics or synthetic verifier tests; training code unchanged"
   },
   {
+    "path": "experiments/controlled_pooling_adapter_ema/__init__.py",
+    "sha256": "8160ae9b187c6a3ee353fc119f8f70bb61cc9f67c5c66c66733e9bba4a245d1e",
+    "provenance": "independent controlled-pooling phase1 source or synthetic test; historical training sources unchanged"
+  },
+  {
+    "path": "experiments/controlled_pooling_adapter_ema/core.py",
+    "sha256": "6d05edfdeb762b064d32de39826e89ce17bd712a9c59830a8c6d013396c575f6",
+    "provenance": "independent controlled-pooling phase1 source or synthetic test; historical training sources unchanged"
+  },
+  {
+    "path": "experiments/controlled_pooling_adapter_ema/tests/test_controlled.py",
+    "sha256": "15e7594ee27ba7ae9b4cad167afb6792d8ccc7bda4c48dea4bd8f638fa71543f",
+    "provenance": "independent controlled-pooling phase1 source or synthetic test; historical training sources unchanged"
+  },
+  {
+    "path": "experiments/controlled_pooling_adapter_ema/train.py",
+    "sha256": "b3ed00e3b21eedf4dc6050a04b830e6ac86b30a4e20d521f619677d77c6f400c",
+    "provenance": "independent controlled-pooling phase1 source or synthetic test; historical training sources unchanged"
+  },
+  {
     "path": "scripts_qc/__init__.py",
     "sha256": "8c5620b5a2ebfa206e1a73339668ae05fdb31c1aa5567adf037f6026c620b590",
     "provenance": "current reviewed adaptation/test/tool"
@@ -220,7 +240,7 @@
   },
   {
     "path": "tools/check_release.py",
-    "sha256": "3de62d8859317347ac8a8bfacec3d14e5fe44a7c3876e86f09d631bda0b10c85",
-    "provenance": "current reviewed adaptation/test/tool"
+    "sha256": "4e6e1a85ef1b5f19d5003b00a7b7927fc891ec1a2ce7cdc294fba36d76e450ae",
+    "provenance": "source-only release whitelist extended for controlled-pooling experiment"
   }
 ]
